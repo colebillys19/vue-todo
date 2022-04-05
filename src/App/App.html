@@ -1,0 +1,13 @@
+<div>
+  <main>
+    <h1>Vue Todo</h1>
+    <TodoForm
+      :handleSubmit="addTodo"
+      :iconSrc="require('../assets/plus.svg')"
+      :isEditing="!!editId"
+      iconAlt="add todo"
+      labelText="add todo"
+      v-model="addInputValue"
+    />
+  </main>
+</div>
