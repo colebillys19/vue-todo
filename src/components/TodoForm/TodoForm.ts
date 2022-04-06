@@ -14,7 +14,7 @@ export default defineComponent({
     modelValue: { default: () => "", type: String },
   },
   setup(props, { emit }) {
-    const inputRef = ref<HTMLDivElement>();
+    const inputRef = ref<HTMLInputElement | null>(null);
     const inputValue = computed({
       get: () => props.modelValue,
       set: (value) => emit("update:modelValue", value),
