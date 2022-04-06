@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <button @click="setEditId(id)">
+    <button :tabindex="isEditing ? -1 : 0" @click="setEditId(id)">
       <img alt="edit todo" src="@/assets/pencil.svg" />
     </button>
   </td>
@@ -8,13 +8,14 @@
   <td>
     <button
       :aria-label="isDone ? 'mark as todo' : 'mark as done'"
+      :tabindex="isEditing ? -1 : 0"
       @click="toggleStatus(id)"
     >
       {{ isDone ? "done" : "todo" }}
     </button>
   </td>
   <td>
-    <button @click="deleteTodo(id)">
+    <button :tabindex="isEditing ? -1 : 0" @click="deleteTodo(id)">
       <img alt="delete todo" src="@/assets/delete.svg" />
     </button>
   </td>

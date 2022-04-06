@@ -1,7 +1,10 @@
-import { computed, defineComponent } from "vue";
+import { computed, defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "TodoForm",
+  mounted() {
+    this.$nextTick(() => this.inputRef?.focus());
+  },
   props: {
     handleSubmit: Function,
     iconAlt: String,
@@ -11,10 +14,11 @@ export default defineComponent({
     modelValue: { default: () => "", type: String },
   },
   setup(props, { emit }) {
+    const inputRef = ref<HTMLDivElement>();
     const inputValue = computed({
       get: () => props.modelValue,
       set: (value) => emit("update:modelValue", value),
     });
-    return { inputValue };
+    return { inputRef, inputValue };
   },
 });

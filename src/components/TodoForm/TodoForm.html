@@ -1,8 +1,14 @@
-<form>
+<form tabindex="-1">
   <label for="name">{{ labelText }}</label>
   <div>
-    <input id="name" type="text" v-model="inputValue" />
-    <button @click.prevent="handleSubmit">
+    <input
+      :tabindex="isEditing ? -1 : 0"
+      id="name"
+      ref="inputRef"
+      type="text"
+      v-model="inputValue"
+    />
+    <button :tabindex="isEditing ? -1 : 0" @click.prevent="handleSubmit">
       <img :alt="iconAlt" :src="iconSrc" />
     </button>
   </div>
