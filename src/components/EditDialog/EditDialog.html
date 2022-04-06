@@ -1,1 +1,15 @@
-<div></div>
+<div @click="setEditId('')" class="dialogContainer">
+  <dialog @click.stop="" open>
+    <button @click="setEditId('')">
+      <img alt="close dialog" src="@/assets/close.svg" />
+    </button>
+    <TodoForm
+      :handleSubmit="updateTask"
+      :iconSrc="require('@/assets/check.svg')"
+      iconAlt="update todo"
+      labelText="edit todo"
+      tabIndex="0"
+      v-model="inputValue"
+    />
+  </dialog>
+</div>

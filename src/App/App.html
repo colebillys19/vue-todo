@@ -3,7 +3,7 @@
     <h1>Vue Todo</h1>
     <TodoForm
       :handleSubmit="addTodo"
-      :iconSrc="require('../assets/plus.svg')"
+      :iconSrc="require('@/assets/plus.svg')"
       :isEditing="!!editId"
       :toggleStatus="toggleStatus"
       iconAlt="add todo"
@@ -17,6 +17,13 @@
       :todos="todoList.getTodos()"
       :toggleStatus="toggleStatus"
       v-if="todoList.getTodos().length"
+    />
+    <EditDialog
+      :editInputValue="editInputValue"
+      :setEditId="setEditId"
+      :updateTask="updateTask"
+      v-if="editId"
+      v-model="editInputValue"
     />
   </main>
 </div>
