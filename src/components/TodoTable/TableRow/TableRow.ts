@@ -1,6 +1,14 @@
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'TableRow',
-  components: {}
+  name: "TableRow",
+  props: {
+    deleteTodo: Function,
+    id: String,
+    isDone: Boolean,
+    isEditing: Boolean,
+    setEditId: Function,
+    task: String,
+    toggleStatus: Function,
+  },
 });

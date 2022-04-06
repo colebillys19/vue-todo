@@ -1,1 +1,21 @@
-<div></div>
+<tr>
+  <td>
+    <button @click="setEditId(id)">
+      <img alt="edit todo" src="@/assets/pencil.svg" />
+    </button>
+  </td>
+  <td>{{ task }}</td>
+  <td>
+    <button
+      :aria-label="isDone ? 'mark as todo' : 'mark as done'"
+      @click="toggleStatus(id)"
+    >
+      {{ isDone ? "done" : "todo" }}
+    </button>
+  </td>
+  <td>
+    <button @click="deleteTodo(id)">
+      <img alt="delete todo" src="@/assets/delete.svg" />
+    </button>
+  </td>
+</tr>

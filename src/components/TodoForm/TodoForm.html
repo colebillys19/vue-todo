@@ -1,11 +1,9 @@
-<div>
-  <form>
-    <label for="name">{{ labelText }}</label>
-    <div>
-      <input id="name" type="text" v-model="inputValue" />
-      <button @click.prevent="handleSubmit">
-        <img :alt="iconAlt" :src="iconSrc" />
-      </button>
-    </div>
-  </form>
-</div>
+<form>
+  <label for="name">{{ labelText }}</label>
+  <div>
+    <input id="name" type="text" v-model="inputValue" />
+    <button @click.prevent="handleSubmit">
+      <img :alt="iconAlt" :src="iconSrc" />
+    </button>
+  </div>
+</form>

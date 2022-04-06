@@ -1,30 +1,37 @@
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 import TodoList from "@/classes/TodoList";
-import TodoForm from '@/components/TodoForm/TodoForm.vue';
+import TodoForm from "@/components/TodoForm/TodoForm.vue";
+import TodoTable from "@/components/TodoTable/TodoTable.vue";
 
 export default defineComponent({
-  components: { TodoForm },
+  components: { TodoForm, TodoTable },
   data() {
     return {
       addInputValue: "" as string,
       editId: "" as string,
       editInputValue: "" as string,
-      todos: new TodoList(),
+      todoList: new TodoList(),
     };
   },
   methods: {
     addTodo() {
-      this.todos.addTodo(this.addInputValue);
+      this.todoList.addTodo(this.addInputValue);
       this.addInputValue = "";
     },
-    closeDialog() {
-      this.editId = "";
+    deleteTodo(id: string) {
+      this.todoList.deleteTodo(id);
     },
-    updateTodo(id: string) {
-      this.todos.updateTodo(this.editInputValue, id);
+    setEditId(id: string) {
+      this.editId = id;
+    },
+    toggleStatus(id: string) {
+      this.todoList.toggleStatus(id);
+    },
+    updateTask(id: string) {
+      this.todoList.updateTask(this.editInputValue, id);
       this.editId = "";
       this.editInputValue = "";
     },
   },
-  name: 'App',
+  name: "App",
 });

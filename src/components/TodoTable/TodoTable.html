@@ -1,1 +1,23 @@
-<div></div>
+<table cellspacing="0">
+  <thead>
+    <tr>
+      <th></th>
+      <th>task</th>
+      <th>status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <TableRow
+      :deleteTodo="deleteTodo"
+      :id="id"
+      :isDone="isDone"
+      :isEditing="isEditing"
+      :key="id"
+      :setEditId="setEditId"
+      :task="task"
+      :toggleStatus="toggleStatus"
+      v-for="{ id, isDone, task } in todos"
+    />
+  </tbody>
+</table>

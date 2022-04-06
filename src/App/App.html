@@ -5,9 +5,18 @@
       :handleSubmit="addTodo"
       :iconSrc="require('../assets/plus.svg')"
       :isEditing="!!editId"
+      :toggleStatus="toggleStatus"
       iconAlt="add todo"
       labelText="add todo"
       v-model="addInputValue"
+    />
+    <TodoTable
+      :deleteTodo="deleteTodo"
+      :isEditing="!!editId"
+      :setEditId="setEditId"
+      :todos="todoList.getTodos()"
+      :toggleStatus="toggleStatus"
+      v-if="todoList.getTodos().length"
     />
   </main>
 </div>

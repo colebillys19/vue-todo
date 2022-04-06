@@ -14,11 +14,21 @@ class TodoList {
     this.todos = this.todos.filter(({ id }: { id: string }) => id !== targetId);
   }
 
-  getLength(): number {
-    return this.todos.length;
+  getTodos(): Array<Todo> {
+    return this.todos;
   }
 
-  updateTodo(newTask: string, targetId: string): void {
+  toggleStatus(targetId: string): void {
+    this.todos = this.todos.map((todo: Todo) => {
+      const { id, isDone, task } = todo;
+      if (id === targetId) {
+        return { id, isDone: !isDone, task };
+      }
+      return todo;
+    });
+  }
+
+  updateTask(newTask: string, targetId: string): void {
     this.todos = this.todos.map((todo: Todo) => {
       const { id, isDone } = todo;
       if (id === targetId) {
