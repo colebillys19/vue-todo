@@ -18,12 +18,14 @@
       :toggleStatus="toggleStatus"
       v-if="todoList.getTodos().length"
     />
-    <EditDialog
-      :editInputValue="editInputValue"
-      :setEditId="setEditId"
-      :updateTask="updateTask"
-      v-if="editId"
-      v-model="editInputValue"
-    />
+    <Transition>
+      <EditDialog
+        :editInputValue="editInputValue"
+        :setEditId="setEditId"
+        :updateTask="updateTask"
+        v-if="editId"
+        v-model="editInputValue"
+      />
+    </Transition>
   </main>
 </div>
