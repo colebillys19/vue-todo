@@ -1,3 +1,20 @@
-.temp {
-  background-color: transparent;
+* {
+  font-family: "Montserrat", sans-serif;
+  color: #36495d;
+}
+
+h1 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+main {
+  background-color: #ffffff;
+  border-left: 8px solid #41b883;
+  border-right: 8px solid #41b883;
+  height: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 30px 0 60px;
+  width: 800px;
 }

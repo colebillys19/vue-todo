@@ -4,13 +4,18 @@ import TodoForm from "@/components/TodoForm/TodoForm.vue";
 export default defineComponent({
   name: "EditDialog",
   components: { TodoForm },
-  // methods: {
-  //   listenForEsc(e) {
-  //     if (e.which === 27) {
-  //       this.setEditId();
-  //     }
-  //   }
-  // },
+  methods: {
+    handleEsc(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        if (this.setEditId) {
+          this.setEditId("");
+        }
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("keydown", this.handleEsc);
+  },
   props: {
     editId: String,
     modelValue: String,
@@ -23,5 +28,8 @@ export default defineComponent({
       set: (value) => emit("update:modelValue", value),
     });
     return { inputValue };
+  },
+  unmounted() {
+    window.removeEventListener("keydown", this.handleEsc);
   },
 });

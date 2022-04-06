@@ -1,3 +1,41 @@
-.temp {
+div {
+  display: flex;
+}
+
+form {
+  margin: 0 auto;
+  text-align: left;
+  width: 300px;
+}
+
+input {
+  flex-grow: 1;
+  height: 40px;
+  padding: 0 10px;
+}
+
+label {
+  color: grey;
+  font-size: 12px;
+}
+
+.formButton {
+  align-items: center;
   background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  margin-left: 8px;
+  padding: 0;
+  width: 40px;
+}
+
+.formButton:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.formButton img {
+  height: 30px;
+  width: 30px;
 }

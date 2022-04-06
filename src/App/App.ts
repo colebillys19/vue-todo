@@ -31,7 +31,7 @@ export default defineComponent({
       this.todoList.toggleStatus(id);
     },
     updateTask() {
-      if (this.editId) {
+      if (this.editInputValue) {
         this.todoList.updateTask(this.editInputValue, this.editId);
         this.editId = "";
         this.editInputValue = "";

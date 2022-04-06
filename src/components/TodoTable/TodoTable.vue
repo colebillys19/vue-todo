@@ -2,4 +2,4 @@
 
 <script lang="ts" src="./TodoTable.ts"></script>
 
-<style src="./TodoTable.css" scoped></style>
+<style src="./TodoTable.css"></style>
