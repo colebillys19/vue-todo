@@ -35,6 +35,11 @@ th:nth-of-type(3) {
   background-color: rgba(54, 73, 93, 0.1);
 }
 
+tr:not(:last-of-type) td:nth-of-type(2),
+tr:not(:last-of-type) td:nth-of-type(3) {
+  border-bottom: 1px solid transparent;
+}
+
 tr:last-of-type td:nth-of-type(2),
 tr:last-of-type td:nth-of-type(3) {
   border-bottom: 1px solid grey;
